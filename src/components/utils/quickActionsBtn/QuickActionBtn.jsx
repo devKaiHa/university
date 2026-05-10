@@ -1,4 +1,3 @@
-import React from "react";
 import "./QuickActionBtn.css";
 
 const QuickActionBtn = ({ Icon, title }) => {

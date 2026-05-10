@@ -1,22 +1,33 @@
-import React from "react";
 import QuickActionBtn from "../components/utils/quickActionsBtn/QuickActionBtn";
-import { FileArrowDown } from "react-bootstrap-icons";
+import {
+  FileArrowDownFill,
+  FileCheckFill,
+  FileEarmarkBarGraphFill,
+  FileEarmarkBinaryFill,
+  FileEarmarkDiffFill,
+  FileEarmarkPdfFill,
+  FileEarmarkPlusFill,
+  FilePersonFill,
+  FileSpreadsheetFill,
+  FileTextFill,
+  FileZipFill,
+} from "react-bootstrap-icons";
 
 const DashboardPages = () => {
   return (
     <>
       <div className="custom-container p-2 justify-content-around">
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
-        <QuickActionBtn Icon={FileArrowDown} title={`Some title`} />
+        <QuickActionBtn Icon={FileArrowDownFill} title={`Arrow Down`} />
+        <QuickActionBtn Icon={FileCheckFill} title={`Check`} />
+        <QuickActionBtn Icon={FileEarmarkBarGraphFill} title={`Signal`} />
+        <QuickActionBtn Icon={FileEarmarkBinaryFill} title={`Binary`} />
+        <QuickActionBtn Icon={FileEarmarkPdfFill} title={`PDF file`} />
+        <QuickActionBtn Icon={FileEarmarkPlusFill} title={`Plus sign`} />
+        <QuickActionBtn Icon={FileTextFill} title={`Paragraph`} />
+        <QuickActionBtn Icon={FileSpreadsheetFill} title={`Spreadsheet`} />
+        <QuickActionBtn Icon={FileZipFill} title={`ZIP`} />
+        <QuickActionBtn Icon={FilePersonFill} title={`Person`} />
+        <QuickActionBtn Icon={FileEarmarkDiffFill} title={`Diff`} />
       </div>
 
       <div className="custom-container p-2 d-block">

@@ -1,10 +1,18 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import DashboardPages from "./pages/DashboardPages";
 import LayoutSidebar from "./components/utils/sidebar/LayoutSidebar";
 import TopNavbar from "./components/utils/topbar/TopNavbar";
 import Login from "./components/auth/Login";
+import RegistrationPage from "./pages/RegistrationPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -33,6 +41,8 @@ function ProtectedRoutes() {
 }
 
 function AppContent() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === "/myprofile";
   const userData = Cookies.get("userData")
     ? JSON.parse(Cookies.get("userData"))
     : {};
@@ -43,7 +53,7 @@ function AppContent() {
         <LayoutSidebar />
       </div>
       <div className="col-10" style={{ width: "86%" }}>
-        <TopNavbar />
+        {!hideNavbar && <TopNavbar />}
         <div className="col-12">
           <div id="content">
             <Routes>
@@ -55,9 +65,9 @@ function AppContent() {
               {/* {userData.role === "user" && (
                 <> */}
               <Route path="/myregistration" element={<DashboardPages />} />
-              <Route path="/registration" element={<DashboardPages />} />
+              <Route path="/registration" element={<RegistrationPage />} />
               <Route path="/terms" element={<DashboardPages />} />
-              <Route path="/myprofile" element={<DashboardPages />} />
+              <Route path="/myprofile" element={<ProfilePage />} />
               {/* </>
               )} */}
               <Route path="*" element={<DashboardPages />} />
